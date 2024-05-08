@@ -32,8 +32,6 @@ public class Constants {
 
     public static final Integer MAX_COUNT_OF_MISTAKES = 6;
 
-    public static final String UNKNOWN_ERROR_MESSAGE = "ERROR: UNKNOWN ERROR";
-
     public static final String UNKNOWN_LETTER_ELEMENT = "_";
 
     public static final String MISTAKES_DELIMITER = ", ";

@@ -10,7 +10,6 @@ import repository.WordRepository;
 import repository.WordRepositoryImpl;
 import view.HangmanView;
 
-import java.awt.desktop.PreferencesEvent;
 import java.util.HashSet;
 import java.util.stream.Collectors;
 

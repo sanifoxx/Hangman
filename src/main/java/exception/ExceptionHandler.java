@@ -29,9 +29,6 @@ public class ExceptionHandler {
                 | IncorrectLetterSequenceException e
         ) {
             standardHandle(e);
-        } catch (RuntimeException e) {
-            System.out.println(e);
-            e.printStackTrace();
         }
     }
 
