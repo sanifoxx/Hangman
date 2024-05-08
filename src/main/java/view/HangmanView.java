@@ -32,6 +32,7 @@ public class HangmanView {
                         buildPicArea(),
                         buildWordArea(),
                         buildStatisticsArea(),
+                        buildMessageArea(),
                         buildErrorArea(),
                         buildMenuArea(),
                         inputPattern
@@ -39,13 +40,14 @@ public class HangmanView {
         );
     }
 
-    private String buildFrame(String picArea, String wordArea, String statisticArea,
+    private String buildFrame(String picArea, String wordArea, String statisticArea, String messageArea,
                               String errorArea, String menuArea, String inputPattern) {
         return String.format(
                 Constants.FRAME_FORMAT,
                 picArea,
                 wordArea,
                 statisticArea,
+                messageArea,
                 errorArea,
                 menuArea,
                 inputPattern
@@ -109,6 +111,21 @@ public class HangmanView {
                     hangmanData.getAttemptsCount(),
                     hangmanData.getMistakesCount()
             );
+        }
+        return result;
+    }
+
+    private String buildMessageArea() {
+        String result = Constants.EMPTY_LINE;
+        if (GameStatus.MENU.equals(hangmanData.getGameStatus())) {
+            result = Constants.WELCOME_MESSAGE;
+        }
+        if (GameStatus.IN_GAME.equals(hangmanData.getGameStatus())) {
+            result = Constants.EMPTY_LINE;
+        }
+        if (GameStatus.WIN.equals(hangmanData.getGameStatus())
+                || GameStatus.GAME_OVER.equals(hangmanData.getGameStatus())) {
+            result = Constants.RELOAD_MESSAGE;
         }
         return result;
     }

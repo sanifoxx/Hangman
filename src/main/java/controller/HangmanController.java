@@ -93,7 +93,7 @@ public class HangmanController {
             );
         }
         if (Constants.REFUSE_COMMAND.equals(action)) {
-            hangmanData.setGameStatus(GameStatus.MENU);
+            hangmanData.setGameStatus(GameStatus.EXIT);
         }
         if (Constants.ACCEPT_COMMAND.equals(action)) {
             initGame();

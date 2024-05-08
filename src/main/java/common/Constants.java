@@ -4,7 +4,7 @@ import java.util.List;
 
 public class Constants {
 
-    public static final String PATH_WORDS_FILE = "src/main/resources/words_ru";
+    public static final String WORDS_FILE = "/words_ru";
 
     public static final String WELCOME_MESSAGE = "Do you want to play?\n";
 
@@ -53,7 +53,7 @@ public class Constants {
             "%s" +
             "\n" +
             "\n" +
-            "\n" +
+            "%s" +
             "%s" +
             "%s" +
             "\n" +

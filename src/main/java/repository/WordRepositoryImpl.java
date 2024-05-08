@@ -3,10 +3,11 @@ package repository;
 import common.Constants;
 
 import java.io.BufferedReader;
-import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Random;
 
 public class WordRepositoryImpl implements WordRepository {
@@ -42,7 +43,11 @@ public class WordRepositoryImpl implements WordRepository {
     private void loadWordsFromFile() {
         words = new ArrayList<>();
         try {
-            FileReader fileReader = new FileReader(Constants.PATH_WORDS_FILE);
+            InputStreamReader fileReader = new InputStreamReader(
+                    Objects.requireNonNull(
+                            getClass().getResourceAsStream(Constants.WORDS_FILE)
+                    )
+            );
             BufferedReader bufferedReader = new BufferedReader(fileReader);
             while (bufferedReader.ready()) {
                 String word = bufferedReader.readLine();

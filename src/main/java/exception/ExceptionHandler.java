@@ -31,6 +31,7 @@ public class ExceptionHandler {
             standardHandle(e);
         } catch (RuntimeException e) {
             System.out.println(e);
+            e.printStackTrace();
         }
     }
 
